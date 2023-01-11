@@ -44,7 +44,7 @@ table {
 body {
   height: 100vh;
   background-color: #3A4663;
-  font-family: sans-serif;
+  font-family: 'League Spartan', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,18 +57,63 @@ h1 {
   margin-top: 4rem;
 }
 
-#display, #buttons-container {
-  width: 540px;
+#display-container, #buttons-container {
   margin-top: 2rem;
   border-radius: 10px;
 }
 
-#display {
+#display-container {
+  width: 540px;
   height: 128px;
   background-color: #181F33;
+  color: #FFFFFF;
+  font-size: 56px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#display {
+  margin-right: 2rem;
 }
 
 #buttons-container {
+  width: 500px;
   height: 480px;
   background-color: #242D44;
+  display: grid;
+  padding: 20px;
+  gap: 32px;
+  grid-template-columns: repeat(4, 1fr) /* 4 equal columns */
+}
+
+.btn-group-1, .grid-col-span-2 {
+  border-radius: 10px;
+  box-shadow: inset 0px -4px 0px #B3A497;
+  font-size: 28px;
+  font-weight: 700;
+  color: #434A59;
+  background-color: #EAE3DC;
+}
+
+.btn-group-1 {
+  height: 64px;
+  width: 101px;
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+  height: 64px;
+  width: 227px;
+}
+
+.light-blue {
+  background-color: #647198;
+  color: #FFFFFF;
+  box-shadow: inset 0px -4px 0px #414E73;
+}
+
+#red-btn {
+  background-color: #D03F2F;
+  color: #FFFFFF;
 }
