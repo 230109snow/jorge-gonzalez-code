@@ -43,14 +43,32 @@ table {
 
 body {
   height: 100vh;
-  background-color: #1B212C;
-  color: #EC3944;
+  background-color: #3A4663;
   font-family: sans-serif;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: bold;
-  margin-top: 3rem;
+  margin-top: 4rem;
+}
+
+#display, #buttons-container {
+  width: 540px;
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+
+#display {
+  height: 128px;
+  background-color: #181F33;
+}
+
+#buttons-container {
+  height: 480px;
+  background-color: #242D44;
 }
