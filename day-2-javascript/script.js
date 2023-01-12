@@ -82,3 +82,8 @@ function handleClick(event) {
 function updateDisplay(value) {
   display.innerHTML = value;
 }
+
+function clearValue() {
+  num = 0;
+  updateDisplay(num);
+}
