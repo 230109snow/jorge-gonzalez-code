@@ -42,8 +42,8 @@ function getUserData(username) {
 
 function updateUserInfo(name, username, bio, joinDate, src) {
   nameElement.innerText = name;
-  usernameElement.innerText = username;
-  bioElement.innerText = bio;
+  usernameElement.innerText = `@${username}`;
+  bio === null ? bioElement.innerText = "This user has no bio.": bioElement.innerText = bio;
   joinElement.innerText = `Joined ${joinDate.month}/${joinDate.day}/${joinDate.year}`;
   imgElement.src = src;
 }

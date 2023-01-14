@@ -55,7 +55,7 @@ table {
 
 body {
   height: 100vh;
-  background-color: #141D2F;
+  background-color: hsl(220deg 40% 14%);
   display: grid;
   place-items: center;
   font-family: 'Space Mono', monospace;
@@ -75,16 +75,22 @@ input, #dev-container {
 
 form {
   display: flex;
+  align-items: center;
   width: 730px;
   border-radius: 15px;
+  height: 69px;
 }
 
 input {
   flex-grow: 2;
-  height: 69px;
   font-size: 18px;
   border: none;
   background-color: transparent;
+  margin-left: 20px;
+}
+
+input:focus {
+  outline: none;
 }
 
 button {
@@ -94,6 +100,8 @@ button {
   border-radius: 10px;
   font-size: 16px;
   font-family: 'Space Mono', monospace;
+  margin-right: 15px;
+  border: none;
 }
 
 ::placeholder {
@@ -110,23 +118,35 @@ button {
 
 #top-row-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 30px;
+  height: 50%;
 }
 
 #user-info {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
 }
 
-#user-info span:first-child {
+#dev-name {
   font-size: 26px;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
   font-weight: 700;
 }
 
-#user-info span:nth-child(2) {
+#username {
   margin-bottom: 20px;
   color: #0079FF;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#bio {
+  line-height: 1.5;
+  font-size: 15px;
+  text-align: center;
 }
 
 #top-row-container img {
@@ -136,17 +156,21 @@ button {
 }
 
 #bottom-row {
-  height: 185px;
-}
-
-#bottom-row {
-  width: 480px;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  
 }
 
 #user-stats {
+  height: 185px;
+  width: 480px;
   height: 50%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: hsl(220deg 40% 14%);
+  border-radius: 10px;
 }
 
