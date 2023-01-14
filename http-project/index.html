@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
-  <script scrc="script.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -19,8 +19,13 @@
     <h1 class="white-text bold">devFinder</h1>
     
     <form class="light-blue">
-      <input class="white-text" placeholder="Search for a GitHub user...">
-      <button class="white-text bold">Search</button>
+      <input
+        type="text"
+        class="white-text" 
+        placeholder="Search for a GitHub user..."
+        required
+      />
+      <button type="submit" class="white-text bold">Search</button>
     </form>
       
     
