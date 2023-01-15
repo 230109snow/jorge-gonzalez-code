@@ -59,6 +59,11 @@ h2 {
   margin-top: 20px;
 }
 
+#lives {
+  font-weight: bold;
+  font-size: 30px;
+}
+
 #word-to-guess {
   margin-top: 20px;
   margin-bottom: 20px;

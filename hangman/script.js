@@ -7,13 +7,19 @@ let counter = 0;
 // const wordToGuess = "integer"
 const wordToGuess = "variable";
 
+let livesCounter = wordToGuess.length;
+
+const livesElement = document.querySelector("#lives");
+
+livesElement.innerText = `Lives: ${livesCounter}`;
+
 const arrToCompare = [];
 
 for (let i = 0; i < wordToGuess.length; i++) {
   arrToCompare.push(null);
 }
 
-const lettersRemaining = wordToGuess.split("");
+let lettersRemaining = wordToGuess.split("");
 
 // Generate underscores for word to guess
 for(let i = 0; i < wordToGuess.length; i++) {
@@ -55,10 +61,6 @@ alphabetArr.forEach(letter => {
 
 function checkIfExists(letterPressed) {
 
-  if(lettersRemaining === arrToCompare) {
-    alert("You got it!");
-  }
-
   if (lettersRemaining.includes(letterPressed)) {
 
     const index = lettersRemaining.indexOf(letterPressed);
@@ -67,17 +69,42 @@ function checkIfExists(letterPressed) {
 
     blank.innerText = letterPressed;
 
-    lettersRemaining.splice(index, 1);
-    lettersRemaining.splice(index, 0, null);
+    // remove the character guessed correctly
+    lettersRemaining.splice(index, 1); 
+
+    // replace with null so the position doesn't change
+    lettersRemaining.splice(index, 0, null); 
 
     counter = counter + 1;
 
+    // If player wins the game
     if (counter == wordToGuess.length) {
       alert("You won!");
+      livesCounter = wordToGuess.length;
+      counter = 0;
+      spans.forEach(letter => {
+        letter.innerText = "_ ";
+      }) 
+      livesElement.innerText = `Lives: ${livesCounter}`
+      lettersRemaining = wordToGuess.split("");
     }
 
   } else {
-    console.log(`${letterPressed} is not in the word :(`)
+    livesCounter = livesCounter - 1;
+
+    if (livesCounter === 0) {
+      alert("Sorry, you lost!");
+      livesCounter = wordToGuess.length;
+      counter = 0;
+      lettersRemaining = wordToGuess.split("");
+      livesElement.innerText = `Lives: ${livesCounter}`
+      spans.forEach(letter => {
+        letter.innerText="_ ";
+      })
+    } else {
+      livesElement.innerText = `Lives: ${livesCounter}`;
+    }
+
   }
 }
 
