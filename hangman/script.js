@@ -1,7 +1,20 @@
 const input = document.querySelector("input");
 const alphabet = document.querySelector("#alphabet");
+const wordContainer = document.querySelector("#word-to-guess");
 const alphabetArr = [];
 const wordToGuess = "compiler";
+
+// Generate underscores for word to guess
+for(let i = 0; i < wordToGuess.length; i++) {
+
+  const span = document.createElement("span");
+
+  span.setAttribute("id", `letter-${i}`);
+
+  span.innerText = "_ ";
+
+  wordContainer.appendChild(span);
+}
 
 /*
 Generate array from alphabet using String.fromCharCode()
@@ -35,7 +48,13 @@ buttons.forEach(button => {
     const letterPressed = event.target.innerText.toLowerCase();
 
     if (wordToGuess.includes(letterPressed)) {
-      console.log(`${letterPressed} is in the word!`);
+
+      const index = wordToGuess.indexOf(letterPressed);
+
+      const blank = document.querySelector(`#letter-${index}`);
+
+      blank.innerText = letterPressed;
+
     } else {
       console.log(`${letterPressed} is not in the word :(`)
     }
