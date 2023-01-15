@@ -1,5 +1,6 @@
 const input = document.querySelector("input");
 const alphabet = document.querySelector("#alphabet");
+const alphabetArr = [];
 const wordToGuess = "compiler";
 
 /*
@@ -15,8 +16,6 @@ This will repeat until we reach "Z", ending the loop
 when i is 90.
 */
 
-const alphabetArr = [];
-
 for (i = 65; i <= 90; i++) {
   alphabetArr.push(String.fromCharCode(i));
   // console.log(`ASCII Decimal Value: ${i} Character: ${String.fromCharCode(i)}`);
@@ -28,17 +27,10 @@ alphabetArr.forEach(letter => {
   alphabet.appendChild(button);
 })
 
+const buttons = document.querySelectorAll("button");
 
-document.querySelector("button").addEventListener("click", (event) => {
-
-  event.preventDefault();
-
-  const value = input.value;
-
-  if (value === wordToGuess) {
-    console.log("You got it!");
-  } else {
-    console.log("Sorry, try again!");
-  }
-
+buttons.forEach(button => {
+  button.addEventListener("click", event => {
+    console.log(button.innerText);
+  })
 })

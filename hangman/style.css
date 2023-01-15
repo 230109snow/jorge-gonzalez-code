@@ -58,3 +58,10 @@ h1 {
 h2 {
   margin-top: 20px;
 }
+
+#word-to-guess {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
