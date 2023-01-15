@@ -2,7 +2,18 @@ const input = document.querySelector("input");
 const alphabet = document.querySelector("#alphabet");
 const wordContainer = document.querySelector("#word-to-guess");
 const alphabetArr = [];
-const wordToGuess = "compiler";
+let counter = 0;
+// const wordToGuess = "compiler";
+// const wordToGuess = "integer"
+const wordToGuess = "variable";
+
+const arrToCompare = [];
+
+for (let i = 0; i < wordToGuess.length; i++) {
+  arrToCompare.push(null);
+}
+
+const lettersRemaining = wordToGuess.split("");
 
 // Generate underscores for word to guess
 for(let i = 0; i < wordToGuess.length; i++) {
@@ -15,6 +26,8 @@ for(let i = 0; i < wordToGuess.length; i++) {
 
   wordContainer.appendChild(span);
 }
+
+const spans = document.querySelectorAll("#word-to-guess span");
 
 /*
 Generate array from alphabet using String.fromCharCode()
@@ -40,6 +53,34 @@ alphabetArr.forEach(letter => {
   alphabet.appendChild(button);
 })
 
+function checkIfExists(letterPressed) {
+
+  if(lettersRemaining === arrToCompare) {
+    alert("You got it!");
+  }
+
+  if (lettersRemaining.includes(letterPressed)) {
+
+    const index = lettersRemaining.indexOf(letterPressed);
+
+    const blank = document.querySelector(`#letter-${index}`);
+
+    blank.innerText = letterPressed;
+
+    lettersRemaining.splice(index, 1);
+    lettersRemaining.splice(index, 0, null);
+
+    counter = counter + 1;
+
+    if (counter == wordToGuess.length) {
+      alert("You won!");
+    }
+
+  } else {
+    console.log(`${letterPressed} is not in the word :(`)
+  }
+}
+
 const buttons = document.querySelectorAll("button");
 
 buttons.forEach(button => {
@@ -47,17 +88,7 @@ buttons.forEach(button => {
 
     const letterPressed = event.target.innerText.toLowerCase();
 
-    if (wordToGuess.includes(letterPressed)) {
-
-      const index = wordToGuess.indexOf(letterPressed);
-
-      const blank = document.querySelector(`#letter-${index}`);
-
-      blank.innerText = letterPressed;
-
-    } else {
-      console.log(`${letterPressed} is not in the word :(`)
-    }
+    checkIfExists(letterPressed);
 
   })
 })
