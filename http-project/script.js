@@ -5,6 +5,9 @@ const usernameElement = document.querySelector("#username");
 const bioElement = document.querySelector("#bio");
 const joinElement = document.querySelector("#join-date");
 const imgElement = document.querySelector("img");
+const reposElement = document.querySelector("#repos");
+const followersElement = document.querySelector("#followers");
+const followingElement = document.querySelector("#following");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -20,6 +23,8 @@ function getUserData(username) {
     res.json()
     .then(data => {
 
+      console.log(data);
+
       const joinDate = {
         year: data.created_at.substring(0, 4),
         month: data.created_at.substring(5, 7),
@@ -31,7 +36,10 @@ function getUserData(username) {
         data.login,
         data.bio,
         joinDate,
-        data.avatar_url
+        data.avatar_url,
+        data.public_repos,
+        data.followers,
+        data.following
       );
 
     })
@@ -40,10 +48,13 @@ function getUserData(username) {
 }
 
 
-function updateUserInfo(name, username, bio, joinDate, src) {
+function updateUserInfo(name, username, bio, joinDate, avatarUrl, repos, followers, following) {
   nameElement.innerText = name;
   usernameElement.innerText = `@${username}`;
   bio === null ? bioElement.innerText = "This user has no bio.": bioElement.innerText = bio;
   joinElement.innerText = `Joined ${joinDate.month}/${joinDate.day}/${joinDate.year}`;
-  imgElement.src = src;
+  imgElement.src = avatarUrl;
+  reposElement.innerText = `repos ${repos}`;
+  followersElement.innerText = `${followers} followers`;
+  followingElement.innerText = `following ${following}`;
 }
