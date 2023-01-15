@@ -31,6 +31,14 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach(button => {
   button.addEventListener("click", event => {
-    console.log(button.innerText);
+
+    const letterPressed = event.target.innerText.toLowerCase();
+
+    if (wordToGuess.includes(letterPressed)) {
+      console.log(`${letterPressed} is in the word!`);
+    } else {
+      console.log(`${letterPressed} is not in the word :(`)
+    }
+
   })
 })
