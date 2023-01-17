@@ -1,14 +1,11 @@
-const input = document.querySelector("input");
 const alphabet = document.querySelector("#letters-container");
 const wordContainer = document.querySelector("#word-to-guess");
 const alphabetArr = [];
 let counter = 0;
-const buttons = document.querySelectorAll("button");
 
-let wordToGuess = "variable";
+let wordToGuess;
 
 const wordBank = ["compiler", "function", "array", "loop", "algorithm", "class", "object", "null", "undefined", "variable", "syntax", "runtime", "string", "integer", "boolean", "exception", "compile", "api"];
-
 
 function getRandomWord() {
   // Generate random number between 0 and the length of the array
@@ -76,6 +73,8 @@ alphabetArr.forEach(letter => {
   button.innerText = letter;
   alphabet.appendChild(button);
 })
+
+const buttons = document.querySelectorAll("button");
 
 function checkIfExists(letterPressed) {
 
