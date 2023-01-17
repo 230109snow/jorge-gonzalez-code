@@ -3,14 +3,27 @@ const alphabet = document.querySelector("#letters-container");
 const wordContainer = document.querySelector("#word-to-guess");
 const alphabetArr = [];
 let counter = 0;
-// const wordToGuess = "compiler";
-// const wordToGuess = "integer"
-const wordToGuess = "variable";
+const buttons = document.querySelectorAll("button");
+
+let wordToGuess = "variable";
+
+const wordBank = ["compiler", "function", "array", "loop", "algorithm", "class", "object", "null", "undefined", "variable", "syntax", "runtime", "string", "integer", "boolean", "exception", "compile", "api"];
 
 
-const wordBank = [];
+function getRandomWord() {
+  // Generate random number between 0 and the length of the array
+  const randomIndex = Math.floor((Math.random() * wordBank.length));
 
-// Random function to choose word
+  console.log(`Random index: ${randomIndex}`);
+
+  // Get a random word
+  wordToGuess = wordBank[randomIndex]
+  console.log(`Random word: ${wordBank[randomIndex]}`);
+
+  // Set the random word
+}
+
+getRandomWord();
 
 let livesCounter = wordToGuess.length;
 
@@ -26,7 +39,7 @@ for (let i = 0; i < wordToGuess.length; i++) {
 
 let lettersRemaining = wordToGuess.split("");
 
-// Generate underscores for word to guess
+// Generate underscores
 for(let i = 0; i < wordToGuess.length; i++) {
 
   const span = document.createElement("span");
@@ -82,7 +95,7 @@ function checkIfExists(letterPressed) {
 
     counter = counter + 1;
 
-    // If player wins the game
+    // If player wins, reset the game
     if (counter == wordToGuess.length) {
       livesCounter = wordToGuess.length;
       counter = 0;
@@ -97,6 +110,7 @@ function checkIfExists(letterPressed) {
   } else {
     livesCounter = livesCounter - 1;
 
+    // If player loses, reset the game;
     if (livesCounter === 0) {
       alert("Sorry, you lost!");
       livesCounter = wordToGuess.length;
@@ -112,8 +126,6 @@ function checkIfExists(letterPressed) {
 
   }
 }
-
-const buttons = document.querySelectorAll("button");
 
 buttons.forEach(button => {
   button.addEventListener("click", event => {
