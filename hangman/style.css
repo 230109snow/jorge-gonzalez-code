@@ -46,22 +46,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: sans-serif;
+  background-color: #000;
+  color: #00ff00;
+  font-family: monospace;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bold;
-  margin-top: 50px;
-}
-
-h2 {
-  margin-top: 20px;
+  margin: 50px 0;
 }
 
 #lives {
   font-weight: bold;
   font-size: 30px;
+  text-decoration: underline;
 }
 
 #word-to-guess {
@@ -69,4 +68,29 @@ h2 {
   margin-bottom: 20px;
   font-size: 50px;
   font-weight: bold;
+}
+
+#letters-container {
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+button {
+  font-size: 30px;
+  font-family: monospace;
+  font-weight: 900;
+
+  background-color: black;
+  color: #00ff00;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  border: 1px solid #00ff00;
+
+}
+
+button:hover {
+  background-color: #00ff00;
+  color: black;
 }

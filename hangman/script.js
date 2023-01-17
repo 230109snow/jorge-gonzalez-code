@@ -1,11 +1,16 @@
 const input = document.querySelector("input");
-const alphabet = document.querySelector("#alphabet");
+const alphabet = document.querySelector("#letters-container");
 const wordContainer = document.querySelector("#word-to-guess");
 const alphabetArr = [];
 let counter = 0;
 // const wordToGuess = "compiler";
 // const wordToGuess = "integer"
 const wordToGuess = "variable";
+
+
+const wordBank = [];
+
+// Random function to choose word
 
 let livesCounter = wordToGuess.length;
 
@@ -79,7 +84,6 @@ function checkIfExists(letterPressed) {
 
     // If player wins the game
     if (counter == wordToGuess.length) {
-      alert("You won!");
       livesCounter = wordToGuess.length;
       counter = 0;
       spans.forEach(letter => {
@@ -87,6 +91,7 @@ function checkIfExists(letterPressed) {
       }) 
       livesElement.innerText = `Lives: ${livesCounter}`
       lettersRemaining = wordToGuess.split("");
+      alert("You won!");
     }
 
   } else {
