@@ -34,6 +34,7 @@ Pipes are a good way to format strings, currency amounts, dates, and other displ
 Angular come with several built-in pipes, and we can also build our own
 
 # Directives
+## ngModel
 ```html
 <input id="name" [(ngModel)]="hero.name" placeholder="Hero name">
 ```
@@ -44,3 +45,32 @@ so data flows from the component class out to the screen **and** `hero.name` is 
 
 To use the `ngModel` Angular directive, we must import the `FormsModule` from `@angular/forms`.
 We do this in `app.module.ts`
+
+---
+## *ngFor
+`*ngFor` is Angular's _repeater_ directive. It repeats the host element **for each** element in a list.
+
+The "host element" means the element in which the `*ngFor` directive is placed in, which in this case is the `<li>`.
+
+```html
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <button type="button">
+      <p class="badge">Hero ID: {{hero.id}}</p>
+      <p class="name">Hero name: {{hero.name}}</p>
+    </button>
+  </li>
+</ul>
+```
+
+**To break this line down even further:**
+
+```html
+<li *ngFor="let hero of heroes">
+```
+
+| Syntax | Details |
+| ------ | ------- |
+| `<li>` | Is the host element 
+| heroes | Is the list we're iterating over
+| hero   | Holds the current hero object for each iteration through the list

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from '../HeroInterface';
+import { HEROES } from '../mockHeroes';
 
 // Class file for the Heroes Component
 
@@ -19,11 +20,14 @@ import { Hero } from '../HeroInterface';
 // We always export a component class so we can import it elsewhere, like in AppModule
 // If we don't export a component class, we can't import it anywhere
 export class HeroesComponent {
-  
+  // These are the HeroesComponent's properties
+
   // Now, we declare our hero property as a type of "Hero"
   // Now, we must align with the properties that are declared inside the HeroInterface
   hero: Hero = {
     id: 1,
     name: "Windstorm"
   }
+
+  heroes = HEROES;
 }
