@@ -23,3 +23,24 @@ For example,
   providers: [ HeroService ]
 })
 ```
+
+# Pipes
+`<p>Hero Name: {{hero.name | uppercase}}</p>`
+
+The word "uppercase" in the interpolation binding after the pipe | character activates the built-in UppercasePipe
+
+Pipes are a good way to format strings, currency amounts, dates, and other display data.
+
+Angular come with several built-in pipes, and we can also build our own
+
+# Directives
+```html
+<input id="name" [(ngModel)]="hero.name" placeholder="Hero name">
+```
+`[(ngModel)]` is Angular's two-way data binding syntax.
+
+It's known as two-way binding because the input text box displays the `hero.name` property,
+so data flows from the component class out to the screen **and** `hero.name` is updated as the the user types, so the data flows from the screen _back_ to the class.
+
+To use the `ngModel` Angular directive, we must import the `FormsModule` from `@angular/forms`.
+We do this in `app.module.ts`

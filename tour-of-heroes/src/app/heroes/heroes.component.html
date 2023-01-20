@@ -4,4 +4,11 @@
   <h2>Hero Details</h2>
   <p><b>Hero ID:</b> {{hero.id}}</p>
   <p><b>Hero Name:</b> {{hero.name}}</p>
+
+  <label for="name">Hero name: </label>
+
+  <!-- ngModel is Angular's two-way binding syntax -->
+  <input id="name" [(ngModel)]="hero.name" placeholder="Hero name">
+  <!-- hero.name points to the hero.name property in the Hero component class -->
+
 </div>

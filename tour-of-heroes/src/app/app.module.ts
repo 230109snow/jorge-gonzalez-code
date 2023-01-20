@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+
 import { HeroesComponent } from './heroes/heroes.component';
 
+// Every component must be declared in exactly one NgModule
+// the `ng generate component` command automatically declares components for us
 @NgModule({
   declarations: [
-    AppComponent,
     // We must declare all components here, or else our application
     // won't recognize its component selector
+    AppComponent,
     HeroesComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  // The imports array contains the list of external modules that the application needs
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
