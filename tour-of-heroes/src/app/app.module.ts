@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 // Every component must be declared in exactly one NgModule
 // the `ng generate component` command automatically declares components for us
@@ -13,7 +14,8 @@ import { HeroesComponent } from './heroes/heroes.component';
     // We must declare all components here, or else our application
     // won't recognize its component selector
     AppComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroDetailComponent
   ],
   // The imports array contains the list of external modules that the application needs
   imports: [BrowserModule, FormsModule],

@@ -1,18 +1,10 @@
 <!-- The interpolation data binding will render whatever is assigned to the hero property -->
 <div>
 
-  <!-- This hero details modal is only displayed when a hero is selected -->
-  <!-- We do this using the *ngIf directive -->
-  <div *ngIf="selectedHero">
-    <h2>Hero Details</h2>
-    <p><b>Hero name:</b> {{selectedHero.name}}</p>
-    <p><b>id:</b> {{selectedHero.id}}</p>
-
-    <div>
-      <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="hero name">
-    </div>
-  </div>
+  <!-- We're binding with the HeroDetailComponent's hero property with this component's -->
+  <!-- selectedHero property. This is known as "property binding" -->
+  <!-- And it's one-way data binding from selectedHero to the hero of the target element -->
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
   <h2>Top Heroes</h2>
 
@@ -23,8 +15,8 @@
 
     <!-- We'll also use Angular's class binding to add and remove a CSS class conditionally -->
     <!-- Syntax:  [class.some-css-class]="some-condition" -->
-      <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-        <span class="badge">{{hero.id}}</span>
+      <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+        <span class="badge">{{hero.rank}}</span>
         <span class="name">{{hero.name}}</span>
       </button>
     </li>

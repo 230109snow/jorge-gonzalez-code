@@ -1,0 +1,15 @@
+<!-- This hero details modal is only displayed when a hero is selected -->
+  <!-- We do this using the *ngIf directive -->
+<div *ngIf="hero">
+  <h2>Hero Details</h2>
+  <!-- These hero interpolation bindings come from this component's hero property -->
+  <!-- Which it receives from its parent component, HeroesComponent -->
+  <p><b>Hero name:</b> {{hero.name}}</p>
+  <p *ngIf="hero.quirk"><b>Quirk:</b> {{hero.quirk}}</p>
+  <p><b>Rank:</b> #{{hero.rank}}</p>
+
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="hero name">
+  </div>
+</div>
