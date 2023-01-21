@@ -74,3 +74,38 @@ The "host element" means the element in which the `*ngFor` directive is placed i
 | `<li>` | Is the host element 
 | heroes | Is the list we're iterating over
 | hero   | Holds the current hero object for each iteration through the list
+---
+## *ngIf
+This directive is useful when we want to display something based on a condition.
+
+This div will render if we have a selectedHero.
+
+```html
+<div *ngIf="selectedHero">
+  <h2>Hero Details</h2>
+  <p>Hero name: {{selectedHero.name}}</p>
+</div>
+```
+
+# Binding
+## Event Binding
+Example of adding a click event binding:
+
+```html
+<button type="button" (click)="onSelect(hero)">
+```
+
+The parentheses around click tell Angular to listen for the `<button>` element's `click` event.
+
+When the user clicks on the button, Angular executes the `onSelect(hero)` expression.
+
+## Class Binding
+
+We can use Angular's class binding to add and remove a CSS class conditionally.
+
+The syntax for adding class binding is: `[class.some-css-class]="some-condition"`
+
+Here, we're saying, if this hero _is_ the selectedHero, add a class of `selected` to this element.
+```html
+<button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+```

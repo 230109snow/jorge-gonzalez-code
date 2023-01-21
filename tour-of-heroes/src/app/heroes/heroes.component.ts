@@ -13,7 +13,7 @@ import { HEROES } from '../mockHeroes';
   // These are known as metadata properties
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  // These styles are private to this component
+  // Stylesheets in this styleUrls array is scoped to this specific component
   styleUrls: ['./heroes.component.css'] 
 })
 
@@ -22,11 +22,16 @@ import { HEROES } from '../mockHeroes';
 export class HeroesComponent {
   // These are the HeroesComponent's properties
 
-  // Now, we declare our hero property as a type of "Hero"
-  // Now, we must align with the properties that are declared inside the HeroInterface
-  hero: Hero = {
-    id: 1,
-    name: "Windstorm"
+  // Each hero must align with the properties that are declared inside the HeroInterface
+
+  // The questionmark means the selectedHero property is not required
+  // We did this because there is no selectedHero when the application first loads
+  selectedHero?: Hero;
+
+  // When we click on a hero, it gets assigned to the selectedHero property
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+    console.log("The selected hero is", this.selectedHero.name);
   }
 
   heroes = HEROES;
