@@ -7,10 +7,10 @@
 <!-- This interpolation binding presents the component's _title_ property value inside the HTML heading tag -->
 <h1>{{title}}</h1>
 
-<!-- This is the selector for the Heroes Component -->
-<!-- It is specified in the metadata property "selector" in heroes.component.ts -->
-<app-heroes></app-heroes>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
 
-<!-- Any other components we create will go here as well -->
-<!-- And they will render in order -->
+<router-outlet></router-outlet>
 <app-messages></app-messages>

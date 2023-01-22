@@ -2,12 +2,25 @@ h2 {
   text-decoration: underline;
 }
 
-button {
+ul {
+  list-style-type: none;
+}
+
+a {
   display: flex;
   align-items: center;
   border-radius: 5px;
   padding: 0;
   width: 250px;
+  text-decoration: none;
+  color: black;
+  background-color: #eee;
+  margin-bottom: 10px;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
 }
 
 span {
@@ -25,9 +38,4 @@ span {
 }
 .name {
   padding-left: 20px;
-}
-
-.selected {
-  background-color: black;
-  color: white;
 }

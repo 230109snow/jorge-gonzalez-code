@@ -29,4 +29,16 @@ export class HeroService {
     return heroes;
   }
 
+  getHero(rank: Number): Observable<Hero> {
+
+    // We'll get the rank of her hero through the parameter
+    // and find the hero from HEROES whose rank matches with the one that was passed
+    const hero = HEROES.find(hero => hero.rank === rank)!;
+
+    // Add a message to the MessageService
+    this.messageService.add(`HeroService: fetched hero ${hero.name}`)
+
+    return of(hero);
+  }
+
 }

@@ -1,1 +1,22 @@
-/* This is the file for the component's styles */
+nav {
+  padding: 0;
+  margin: auto;
+  max-width: 350px;
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  background-color: #3f525c;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  width: 35%;
+  min-width: 70px;
+  margin: .5rem auto;
+  box-sizing: border-box;
+}

@@ -23,9 +23,11 @@ import { MessageService } from '../message.service';
 // If we don't export a component class, we can't import it anywhere
 export class HeroesComponent implements OnInit {
 
+  heroes: Hero[] = [];
+
   // Receive a heroService when HeroesComponent is created
   // It also simultaneously identifies it as a HeroService injection site
-  constructor(private heroService: HeroService, private messageService: MessageService) {
+  constructor(private heroService: HeroService) {
     // We could call getHeroes() inside the constructor, but it's not the best practice
     // We should reserve the constructor for initialization
     // and wiring constructor parameters to properties
@@ -36,20 +38,6 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  // These are the HeroesComponent's properties
-
-  // Each hero must align with the properties that are declared inside the HeroInterface
-
-  // The questionmark means the selectedHero property is not required
-  // We did this because there is no selectedHero when the application first loads
-  selectedHero?: Hero;
-
-  // When we click on a hero, it gets assigned to the selectedHero property
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected ${hero.name}`);
-  }
-
   getHeroes(): void {
     this.heroService.getHeroes()
       // we subscribe to get the Observable (analogous to a Promise)
@@ -57,5 +45,4 @@ export class HeroesComponent implements OnInit {
       .subscribe(heroes => this.heroes = heroes);     
   }
   
-  heroes: Hero[] = [];
 }

@@ -4,21 +4,16 @@
   <!-- We're binding with the HeroDetailComponent's hero property with this component's -->
   <!-- selectedHero property. This is known as "property binding" -->
   <!-- And it's one-way data binding from selectedHero to the hero of the target element -->
-  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-
   <h2>Top Heroes</h2>
 
   <ul class="heroes">
 
     <!-- We'll use the *ngFor directive to iterate through the list of heroes and display them all -->
     <li *ngFor="let hero of heroes">
-
-    <!-- We'll also use Angular's class binding to add and remove a CSS class conditionally -->
-    <!-- Syntax:  [class.some-css-class]="some-condition" -->
-      <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+      <a routerLink="/detail/{{hero.rank}}">
         <span class="badge">{{hero.rank}}</span>
         <span class="name">{{hero.name}}</span>
-      </button>
+      </a>
     </li>
 
   </ul>

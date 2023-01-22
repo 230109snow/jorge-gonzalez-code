@@ -1,0 +1,6 @@
+<h2>Top Heroes</h2>
+
+<div class='heroes-menu'>
+  <!-- We add the current heroes iteration's rank into each routerLink -->
+  <a *ngFor='let hero of heroes' routerLink='/detail/{{hero.rank}}'>{{hero.name}}</a>
+</div>
