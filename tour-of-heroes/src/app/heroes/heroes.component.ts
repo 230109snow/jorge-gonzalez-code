@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { Hero } from '../HeroInterface';
 import { HeroService } from '../hero.service'
+import { MessageService } from '../message.service';
 
 // Class file for the Heroes Component
 
@@ -19,11 +21,11 @@ import { HeroService } from '../hero.service'
 
 // We always export a component class so we can import it elsewhere, like in AppModule
 // If we don't export a component class, we can't import it anywhere
-export class HeroesComponent {
+export class HeroesComponent implements OnInit {
 
   // Receive a heroService when HeroesComponent is created
   // It also simultaneously identifies it as a HeroService injection site
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService, private messageService: MessageService) {
     // We could call getHeroes() inside the constructor, but it's not the best practice
     // We should reserve the constructor for initialization
     // and wiring constructor parameters to properties
@@ -45,6 +47,7 @@ export class HeroesComponent {
   // When we click on a hero, it gets assigned to the selectedHero property
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.messageService.add(`HeroesComponent: Selected ${hero.name}`);
   }
 
   getHeroes(): void {
