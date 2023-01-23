@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'devFinder';
+
+  parentUpdate(message: string) {
+    console.log(message)
+  }
+
 }

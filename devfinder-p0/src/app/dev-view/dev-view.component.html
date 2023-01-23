@@ -1,13 +1,13 @@
 <div id="dev-container">
 
   <div id="dev-info">
-      <img src="https://avatars.githubusercontent.com/u/583231?v=4">
+      <img src="{{dev.imgUrl}}">
     <div id="flex-bio">
-      <h2>{{user.name}}</h2>
-      <span id="github-handle">@{{user.githubHandle}}</span>
-      <p id="bio">{{user.bio}}</p>
+      <h2>{{dev.name}}</h2>
+      <span id="github-handle">@{{dev.githubHandle}}</span>
+      <p id="bio">{{dev.bio}}</p>
     </div>
-    <div style="font-size: 15px; font-weight: 400;">Joined {{user.joinDate}}</div>
+    <div style="font-size: 15px; font-weight: 400;">Joined {{dev.joinDate}}</div>
   </div>
 
   <app-dev-stats></app-dev-stats>

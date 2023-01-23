@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class DevViewComponent {
 
-  user = {
+  dev = {
+    imgUrl: "https://avatars.githubusercontent.com/u/583231?v=4",
     name: "The Octocat",
     githubHandle: "octocat",
     bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.",
@@ -16,5 +17,9 @@ export class DevViewComponent {
     followers: 312323938,
     following: 21413
   }
+
+  // fetchDev() {
+  //   console.log("fetching dev");
+  // }
 
 }

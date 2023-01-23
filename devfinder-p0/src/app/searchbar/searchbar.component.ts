@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-searchbar',
@@ -6,11 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./searchbar.component.css']
 })
 export class SearchbarComponent {
+
+  constructor() {}
+
+  @Output() btnClick = new EventEmitter();
+
   placeholder: string = "Search GitHub user..."
 
-  onClick(): void {
-    console.log("clicked!");
-  }
+  fetchDev(): void {
 
+    this.btnClick.emit("data from search bar");
+
+  }
   
 }
