@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Dev } from './DevInterface';
 import { dev } from './mockData';
 
 @Injectable({
@@ -9,7 +9,7 @@ export class DevService {
 
   constructor() { }
 
-  fetchDev() {
+  fetchDev(): Dev {
     return dev;
   }
 

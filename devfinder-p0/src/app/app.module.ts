@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { DevViewComponent } from './dev-view/dev-view.component';
 import { DevStatsComponent } from './dev-stats/dev-stats.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,7 @@ import { DevStatsComponent } from './dev-stats/dev-stats.component';
     DevViewComponent,
     DevStatsComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -7,6 +7,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SearchbarComponent {
 
+  username: string = '';
+
   constructor() {}
 
   @Output() btnClick = new EventEmitter();
@@ -14,6 +16,8 @@ export class SearchbarComponent {
   placeholder: string = "Search GitHub user..."
 
   fetchDev(): void {
+
+    console.log(`The user typed: ${this.username}`)
 
     this.btnClick.emit("data from search bar");
 
