@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class SearchbarComponent {
   placeholder: string = "Search GitHub user..."
+
+  onClick(): void {
+    console.log("clicked!");
+  }
+
+  
 }

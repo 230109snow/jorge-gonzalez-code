@@ -20,10 +20,6 @@
   color: #FFF;
 }
 
-#img-container {
-  border: 6px blue;
-}
-
 img {
   height: 117px;
   width: 117px;
@@ -32,6 +28,7 @@ img {
 
 #flex-bio {
   border: 1px solid red;
+  width: 350px;
   display: flex;
   flex-direction: column;
 }
