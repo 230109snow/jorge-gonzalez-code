@@ -1,0 +1,54 @@
+#dev-container {
+  width: 730px;
+  height: 419px;
+  border-radius: 15px;
+  background-color: #1E2A47;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dev-info {
+  font-family: 'Space Mono', monospace;
+  border: 1px solid green;
+  height: 200px;
+  width: 730px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #FFF;
+}
+
+#img-container {
+  border: 6px blue;
+}
+
+img {
+  height: 117px;
+  width: 117px;
+  border-radius: 50%;
+}
+
+#flex-bio {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+#github-handle {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color:#0079FF;
+}
+
+#bio {
+  margin-top: 20px;
+  font-size: 15px;
+}
