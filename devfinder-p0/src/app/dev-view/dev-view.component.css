@@ -26,9 +26,10 @@ img {
 }
 
 #flex-bio {
-  width: 350px;
+  width: 300px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 h2 {
@@ -39,13 +40,14 @@ h2 {
 #github-handle {
   margin-top: 20px;
   font-size: 16px;
-  font-weight: 400;
+  letter-spacing: 1px;
+  font-weight: 700;
   color:#0079FF;
 }
 
 #bio {
   margin-top: 20px;
-  font-size: 15px;
-  opacity: 75%;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 1.5;
 }

@@ -18,10 +18,12 @@ input {
   margin-left: 32px;
   color: #FFF;
   caret-color: #0079FF; 
+  width: 70%;
 }
 
 input::placeholder {
   color: #FFF;
+  opacity: 70%;
 }
 
 input:focus {

@@ -8,6 +8,8 @@
   font-family: 'Space Mono', monospace;
   font-weight: 400;
   font-size: 15px;
+  border-radius: 10px;
+  background-color: #141D2F;
 }
 
 b {

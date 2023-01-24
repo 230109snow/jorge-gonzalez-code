@@ -1,4 +1,11 @@
 <form>
-  <input name="username" [(ngModel)]="username" placeholder={{placeholder}} type="text" required>
+  <input
+    name="username"
+    [(ngModel)]="username"
+    placeholder={{placeholder}}
+    type="text"
+    required
+    spellcheck="false"
+  />
   <button (click)="fetchDev()" type="submit">Search</button>
 </form>
