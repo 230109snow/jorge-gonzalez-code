@@ -8,7 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SearchbarComponent {
 
   placeholder: string = "Search for a GitHub user..."
-  username: string = '';
+  username?: string;
 
   @Output() btnClick = new EventEmitter();
 

@@ -1,11 +1,11 @@
-<form>
+<form (ngSubmit)='fetchDev()' ngNativeValidate>
   <input
     name="username"
     [(ngModel)]="username"
     placeholder={{placeholder}}
     type="text"
-    required
     spellcheck="false"
+    required
   />
-  <button (click)="fetchDev()" type="submit">Search</button>
+  <button type="submit">Search</button>
 </form>
