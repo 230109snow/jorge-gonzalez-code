@@ -9,25 +9,35 @@ import { dev } from './mockData';
 })
 export class AppComponent {
 
+  devObj: Dev;
+
   title: string = 'devFinder';
 
-  devObj: Dev = {
-    imgUrl: "https://images.squarespace-cdn.com/content/v1/57645625f5e231759e260acf/1492787814435-W5WKPE4KSW1B1N70I31O/Richard",
-    name: "Richard Hendricks",
-    githubHandle: "rhendricks42",
-    bio: "I'm building the world's best compression company, Pied Piper.",
-    joinDate: "Oct 24 2008",
-    repos: 8,
-    followers: 3938,
-    following: 4
+  constructor() {
+    this.devObj = dev;
   }
 
   parentUpdate(message: string) {
     console.log(message)
   }
 
-  // receiveDevData(dev: Dev) {
-  //   return dev;
-  // }
+  fetchDev(username: string) {
+
+    fetch(`https://api.github.com/users/${username}`)
+      .then(res => {
+      res.json()
+      .then(data => {
+      this.devObj.imgUrl = data.avatar_url;
+      this.devObj.name = data.name;
+      this.devObj.githubHandle = data.login;
+      this.devObj.bio = data.bio;
+      this.devObj.joinDate = data.created_at;
+      this.devObj.repos = data.public_repos;
+      this.devObj.followers = data.followers;
+      this.devObj.following = data.following;
+      });
+    })
+
+  }
 
 }

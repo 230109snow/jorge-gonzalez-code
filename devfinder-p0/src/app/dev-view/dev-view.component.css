@@ -10,7 +10,6 @@
 
 #dev-info {
   font-family: 'Space Mono', monospace;
-  border: 1px solid green;
   height: 200px;
   width: 730px;
   margin-bottom: 15px;
@@ -27,7 +26,6 @@ img {
 }
 
 #flex-bio {
-  border: 1px solid red;
   width: 350px;
   display: flex;
   flex-direction: column;

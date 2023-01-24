@@ -7,31 +7,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SearchbarComponent {
 
+  placeholder: string = "Search GitHub user..."
   username: string = '';
-
-  constructor() {}
 
   @Output() btnClick = new EventEmitter();
 
-  placeholder: string = "Search GitHub user..."
-
   fetchDev(): void {
-
-    console.log(`The user typed: ${this.username}`)
-
-    this.btnClick.emit("data from search bar");
-
-    // fetch("https://api.github.com/users/geohot")
-    //   .then(res => {
-    //     res.json()
-    //     .then(data => {
-    //       console.log(`Github handle: ${data.login}\nName: ${data.name}\nBio: ${data.bio}\nCompany: ${data.company}\nFollowers: ${data.followers}\nRepos: ${data.public_repos}`);
-
-    //     });
-    //   })
-
-
-
+    this.btnClick.emit(this.username);
   }
   
 }
