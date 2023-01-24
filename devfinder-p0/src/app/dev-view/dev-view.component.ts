@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { dev } from '../mockData';
-import { Dev } from '../DevInterface';
+import { Dev } from '../devInterface';
 
 @Component({
   selector: 'app-dev-view',
@@ -8,21 +8,21 @@ import { Dev } from '../DevInterface';
   styleUrls: ['./dev-view.component.css']
 })
 export class DevViewComponent {
+
+  @Input() dev: Dev;
   
-  constructor() {}
-
-  dev: Dev = dev;
-
-  // dev = {
-  //   imgUrl: "https://avatars.githubusercontent.com/u/583231?v=4",
-  //   name: "The Octocat",
-  //   githubHandle: "octocat",
-  //   bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.",
-  //   joinDate: "25 Jan 2011",
-  //   repos: 13231,
-  //   followers: 312323938,
-  //   following: 21413
-  // }
+  constructor() {
+    this.dev = {
+      imgUrl: "",
+      name: "",
+      githubHandle: "",
+      bio: "",
+      joinDate: "",
+      repos: 0,
+      followers: 0,
+      following: 0
+    }
+  }
 
   fetchDev() {
     console.log("fetching dev");

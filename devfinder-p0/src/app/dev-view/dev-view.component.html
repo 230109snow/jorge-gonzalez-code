@@ -1,7 +1,7 @@
-<div id="dev-container">
+<!-- <div id="dev-container">
 
   <div id="dev-info">
-      <img src="{{dev.imgUrl}}">
+      <img src={{dev.imgUrl}}>
     <div id="flex-bio">
       <h2>{{dev.name}}</h2>
       <span id="github-handle">@{{dev.githubHandle}}</span>
@@ -11,4 +11,19 @@
   </div>
 
   <app-dev-stats></app-dev-stats>
+</div> -->
+
+<div id="dev-container">
+
+  <div id="dev-info">
+      <img src={{dev.imgUrl}}>
+    <div id="flex-bio">
+      <h2>{{dev.name}}</h2>
+      <span id="github-handle">{{dev.githubHandle}}</span>
+      <p id="bio">{{dev.bio}}</p>
+    </div>
+    <div style="font-size: 15px; font-weight: 400;">Joined {{dev.joinDate}}</div>
+  </div>
+
+  <app-dev-stats [repos]="dev.repos" [followers]="dev.followers" [following]="dev.following"></app-dev-stats>
 </div>
