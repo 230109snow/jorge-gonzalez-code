@@ -6,5 +6,8 @@ export interface Dev {
   joinDate: string;
   repos: number;
   followers: number;
-  following: number
+  following: number;
+  company: string;
+  location: string;
+  blog: string;
 }

@@ -9,16 +9,13 @@ import { dev } from './mockData';
 })
 export class AppComponent {
 
-  devObj: Dev;
+  // devObj: Dev;
+  devObj: any;
 
   title: string = 'devFinder';
 
   constructor() {
     this.devObj = dev;
-  }
-
-  parentUpdate(message: string) {
-    console.log(message)
   }
 
   fetchDev(username: string) {
@@ -27,14 +24,17 @@ export class AppComponent {
       .then(res => {
       res.json()
       .then(data => {
-      this.devObj.imgUrl = data.avatar_url;
-      this.devObj.name = data.name;
-      this.devObj.githubHandle = data.login;
-      this.devObj.bio = data.bio;
-      this.devObj.joinDate = data.created_at;
-      this.devObj.repos = data.public_repos;
-      this.devObj.followers = data.followers;
-      this.devObj.following = data.following;
+        this.devObj.imgUrl = data.avatar_url;
+        this.devObj.name = data.name;
+        this.devObj.githubHandle = data.login;
+        this.devObj.bio = data.bio;
+        this.devObj.joinDate = data.created_at;
+        this.devObj.repos = data.public_repos;
+        this.devObj.followers = data.followers;
+        this.devObj.following = data.following;
+        this.devObj.location = data.location;
+        this.devObj.company = data.company;
+        this.devObj.blog = data.blog;
       });
     })
 
