@@ -9,6 +9,15 @@ form {
   margin-bottom: 25px;
 }
 
+span {
+  color: #F74646;
+  font-size: 16px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  width: 105px;
+  margin-right: 10px;
+}
+
 #icon-group {
   margin-left: 20px;
   display: flex;

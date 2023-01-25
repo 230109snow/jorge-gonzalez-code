@@ -10,10 +10,26 @@ export class SearchbarComponent {
   placeholder: string = "Search for a GitHub user..."
   username?: string;
 
+  notFound:boolean = false;
+
   @Output() btnClick = new EventEmitter();
 
   fetchDev(): void {
-    this.btnClick.emit(this.username);
+    fetch(`https://api.github.com/users/${this.username}`)
+      .then(res => {
+        res.json()
+          .then(data => {
+            const objLength = Object.keys(data).length;
+
+            if (objLength != 32) {
+              this.notFound = true;
+            } else {
+              this.btnClick.emit(this.username);
+            }
+          })
+      }) 
+
+    
+
   }
-  
 }
