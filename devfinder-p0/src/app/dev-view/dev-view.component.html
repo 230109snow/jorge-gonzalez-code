@@ -10,5 +10,13 @@
     <div style="font-size: 15px; font-weight: 400;">Joined {{dev.joinDate.substring(0, 10)}}</div>
   </div>
 
-  <app-dev-stats [repos]="dev.repos" [followers]="dev.followers" [following]="dev.following"></app-dev-stats>
+  <app-dev-stats
+    [repos]="dev.repos"
+    [followers]="dev.followers"
+    [following]="dev.following"
+    [githubHandle]="dev.githubHandle"
+    [company]="dev.company"
+    [location]="dev.location"
+    [blog]="dev.blog"
+  ></app-dev-stats>
 </div>

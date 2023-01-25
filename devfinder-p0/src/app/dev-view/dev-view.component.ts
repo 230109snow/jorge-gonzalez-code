@@ -20,7 +20,10 @@ export class DevViewComponent {
       joinDate: "",
       repos: 0,
       followers: 0,
-      following: 0
+      following: 0,
+      blog: '',
+      location: '',
+      company: ''
     }
   }
 
