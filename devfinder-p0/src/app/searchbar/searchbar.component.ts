@@ -24,12 +24,10 @@ export class SearchbarComponent {
             if (objLength != 32) {
               this.notFound = true;
             } else {
+              this.notFound = false;
               this.btnClick.emit(this.username);
             }
           })
       }) 
-
-    
-
   }
 }
