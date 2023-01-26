@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -49,26 +51,31 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #000;
-  color: #00ff00;
-  font-family: "Press Start 2P", monospace;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  /* color: #00ff00; */
+  color: #FFF;
+  /* font-family: "Press Start 2P", monospace; */
+  font-family: "Inconsolata", monospace;
+  font-weight: 300;   /* Font weight for terminal effect theme */
+  text-shadow: 0 0 5px #C8C8C8;
 }
 
 h1 {
-  font-size: 50px;
-  font-weight: bold;
+  font-size: 4rem;
   margin: 50px 0;
 }
 
 #lives {
-  font-weight: bold;
-  font-size: 30px;
+  font-size: 3rem;
 }
 
 #word-to-guess {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 50px;
-  font-weight: bold;
+  text-shadow: 0 0 5px #C8C8C8;
 }
 
 #letters-container {
@@ -81,17 +88,33 @@ h1 {
 button {
   display: grid;
   place-items: center;
-  font-size: 30px;
-  font-family: "Press Start 2P";
-  font-weight: 900;
-  color: #00ff00;
+  font-family: "Inconsolata", monospace;
+  font-weight: 300;   /* Font weight for terminal effect theme */
+  text-shadow: 0 0 20px #C8C8C8;
+  color: white;
   width: 70px;
   height: 70px;
   border-radius: 5px;
-  border: 1px solid #00ff00;
+  /* border: 1px solid #00ff00; */
+  border: 1px solid #fff;
+  background-color: #000;
+  background-image: radial-gradient(
+    rgba(0, 160, 0, 0.75), black 160%
+  );
+  font-size: 2rem;
 }
 
 button:hover {
-  background-color: #00ff00;
-  color: black;
+  /* background-color: #00ff00; */
+  background-color: #000;
+  background-image: none;
+  color: #00ff00;
+  /* border: 1px solid #000; */
+  transition: .9s;
+  box-shadow: 0 0 1rem #fff,
+  0 0 .1rem #00ff00,
+  0 0 .1rem #00ff00,
+  0 0 0.1rem #00ff00,
+  0 0 .1rem #00ff00,
+  inset 0 0 .2rem #00ff00;
 }
