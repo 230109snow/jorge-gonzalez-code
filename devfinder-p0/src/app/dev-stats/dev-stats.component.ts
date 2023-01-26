@@ -19,6 +19,10 @@ export class DevStatsComponent implements OnChanges {
     if (this.blog.substring(0, 7) == "http://") {
       this.blog = this.blog.substring(7);
     }
+
+    if (this.blog.substring(0, 8) == "https://") {
+      this.blog = this.blog.substring(7);
+    }
   }
 
   constructor() {
