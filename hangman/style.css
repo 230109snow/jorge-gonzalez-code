@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,7 +50,7 @@ body {
   align-items: center;
   background-color: #000;
   color: #00ff00;
-  font-family: monospace;
+  font-family: "Press Start 2P", monospace;
 }
 
 h1 {
@@ -60,7 +62,6 @@ h1 {
 #lives {
   font-weight: bold;
   font-size: 30px;
-  text-decoration: underline;
 }
 
 #word-to-guess {
@@ -71,23 +72,23 @@ h1 {
 }
 
 #letters-container {
+  margin-top: 15px;
   display: grid;
-  gap: .5rem;
+  gap: 1rem;
   grid-template-columns: repeat(9, 1fr);
 }
 
 button {
+  display: grid;
+  place-items: center;
   font-size: 30px;
-  font-family: monospace;
+  font-family: "Press Start 2P";
   font-weight: 900;
-
-  background-color: black;
   color: #00ff00;
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
   border: 1px solid #00ff00;
-
 }
 
 button:hover {
