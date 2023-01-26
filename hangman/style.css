@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 
@@ -63,12 +63,36 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
-  margin: 50px 0;
+  font-size: 2.8rem;
+  margin: 30px 0;
+}
+
+a {
+  font-size: 1.8rem;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 8px;
+  text-shadow: 0 0 20px #C8C8C8;
+  color: #FFF;
+  margin-bottom: 20px;
+  text-decoration: none;;
+}
+
+a::selection {
+  user-select: none;
+}
+
+a:hover {
+  cursor: pointer;
+  background-color: #FFF;
+  text-shadow: none;
+  color: black;
+  background-image: none;
+  transition: .3s;
 }
 
 #lives {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 #word-to-guess {
@@ -117,4 +141,13 @@ button:hover {
   0 0 0.1rem #00ff00,
   0 0 .1rem #00ff00,
   inset 0 0 .2rem #00ff00;
+}
+
+.dark-mode {
+  background-color: black;
+  background-image: none;
+  color: #00ff00;
+  font-family: "Press Start 2P", monospace;
+  font-size: 30px;
+  text-shadow: 0 0 5px;
 }

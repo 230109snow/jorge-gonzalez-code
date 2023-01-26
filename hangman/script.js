@@ -1,11 +1,41 @@
 const alphabet = document.querySelector("#letters-container");
 const wordContainer = document.querySelector("#word-to-guess");
 const alphabetArr = [];
+const livesElement = document.querySelector("#lives");
+const toggleButton = document.querySelector("a");
+const body = document.querySelector("body");
+const h1 = document.querySelector("h1");
 let counter = 0;
 
 let wordToGuess;
 
+let darkMode = false;
+
 const wordBank = ["compiler", "function", "array", "loop", "algorithm", "class", "object", "null", "undefined", "variable", "syntax", "runtime", "string", "integer", "boolean", "exception", "compile", "api"];
+
+function toggleMode() {
+
+  if (darkMode) {
+    toggleButton.innerText = "Dark Mode"
+    
+  } else {
+    toggleButton.innerText = "Terminal Mode";
+  }
+  
+  buttons.forEach(button => {
+    button.classList.toggle("dark-mode");
+  })
+
+  
+  h1.style.fontSize = "2.5rem";
+  toggleButton.style.border = "none";
+  toggleButton.style.border = "none";
+
+  livesElement.classList.toggle("dark-mode");
+  body.classList.toggle("dark-mode");
+
+  darkMode = !darkMode;
+}
 
 function getRandomWord() {
   // Generate random number between 0 and the length of the array
@@ -23,8 +53,6 @@ function getRandomWord() {
 getRandomWord();
 
 let livesCounter = wordToGuess.length;
-
-const livesElement = document.querySelector("#lives");
 
 livesElement.innerText = `Lives: ${livesCounter}`;
 
