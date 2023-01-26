@@ -1,11 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-dev-stats',
   templateUrl: './dev-stats.component.html',
   styleUrls: ['./dev-stats.component.css']
 })
-export class DevStatsComponent {
+export class DevStatsComponent implements OnChanges {
 
   @Input() repos: number;
   @Input() followers: number;
@@ -14,6 +14,12 @@ export class DevStatsComponent {
   @Input() company: string;
   @Input() location: string;
   @Input() blog: string;
+
+  ngOnChanges() {
+    if (this.blog.substring(0, 7) == "http://") {
+      this.blog = this.blog.substring(7);
+    }
+  }
 
   constructor() {
     this.repos = 0;

@@ -36,6 +36,13 @@
   margin-top: 5px;
 }
 
+#github {
+  height: 20px;
+  padding: 0;
+  width: 20px;
+  margin-right: 4px;
+}
+
 a {
   color: #FFF;
   text-decoration: none;

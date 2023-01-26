@@ -10,7 +10,7 @@ export const dev: Dev = {
   followers: 3938,
   following: 4,
   company: "Pied Piper",
-  blog: "http://web.archive.org/web/20180701100230/http://www.piedpiper.com/",
+  blog: "silicon-valley.fandom.com/wiki/Silicon_Valley_Wiki",
   location: "Palo Alto, California"
 }
 
